@@ -1,5 +1,7 @@
 const totalDistance = document.querySelector(".dist")
 const petEl = document.querySelector(".petrol")
+
+
 let distanceTravelled = 0 ;
 let petrolConsumed = 0 ;
 let petrolRefill = 30 ;
@@ -9,8 +11,11 @@ let petrolPump = [3,7,9,11,15,19];
 
 function start(){
     let initalDistance = Math.trunc(Math.random()*5+1)
-    console.log("random distance between 1-6" + initalDistance);
+    console.log("random distance between 1-6 " +  initalDistance);
     distanceTravelled = distanceTravelled + initalDistance ;
+    
+    
+
     //distanceTravelled += initalDistance ;
     //totalDistance.textContent = "Total Distance Travelled :" + distanceTravelled + "km";
    if (distanceTravelled >= 100 || petrolRemaining<=0) {
@@ -72,3 +77,20 @@ function start(){
     
     
  }
+
+ function reset(){
+    petrolConsumed = 0 ;
+    petrolRefill = 30 ;
+     petrolRemaining = 50 ;
+    petrolPump = [3,7,9,11,15,19];
+    distanceTravelled = 0;
+    totalDistance.textContent = "Total Distance Travelled :" + distanceTravelled + "km"
+    petrolRemaining = 50 ; 
+    petEl.textContent = "petrol consumed :" + petrolRemaining + "L"
+    
+    //totalDistance.textContent = 0;
+
+
+    //petEl.textContent = 50;
+ }
+
